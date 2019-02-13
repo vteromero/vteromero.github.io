@@ -111,7 +111,7 @@ Even if the list has an ascending order, you will still need to encode the value
 
 ### Dealing with negative values
 
-One way to deal with negative values is to map integers (0, -1, 1, -2, 2, -3, 3, ...) to (0, 1, 2, 3, 4, 5, 6, ...) as a previous step before applying the proposed algorithm. In other words, the negative inputs are mapped to odd outputs, and the non-negative inputs to even outputs, so the least-significant bit becomes a *sign bit*. The mapping is expressed in terms of:
+One way to deal with negative values is to use [ZigZag encoding](https://developers.google.com/protocol-buffers/docs/encoding#types) as a previous step before applying the proposed algorithm. ZigZag encoding maps signed integers to unsigned integers so that the values (0, -1, 1, -2, 2, -3, 3, ...) are transformed to (0, 1, 2, 3, 4, 5, 6, ...). In other words, the negative inputs are mapped to odd outputs, and the non-negative inputs to even outputs, so the least-significant bit becomes a *sign bit*. The mapping is expressed in terms of:
 
 $$
 \begin{cases}
