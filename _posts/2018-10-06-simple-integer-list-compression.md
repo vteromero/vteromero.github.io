@@ -37,14 +37,14 @@ So, how could anyone decompress that stream of bits? Be aware that I added some 
 
 The previous example is kind of basic, but at the same time, it is a good starting point to introduce the algorithm I am going to describe. But, before I go into detail, let's define the input.
 
-##### The input
+#### The input
 
 Basically, as the title states, the input is a sorted list of integers. However, we will focus first on a specific version of it and then, we will generalise it. Initially, the input meets the following constraints:
 
 * The order of the elements of the list is descending.
 * The list only contains non-negative integers.
 
-##### The algorithm
+#### The algorithm
 
 The idea behind this algorithm is to be close to encode each integer with the minimum number of bits, or $$minBitsLen$$. That is somehow the same as what we tried in the introductory example. However, in this case, there is a **context** that we can take advantage of: we know that every element on the list is always greater than or equal to the next one. That means as well that at any position $$i$$ on the list $$l$$, $$minBitsLen(l[i])$$ is big enough to represent $$l[i+1]$$. Having that in mind, we can encode each integer by using the value of $$minBitsLen$$ for the previous element:
 
@@ -82,7 +82,7 @@ algorithm "decompress" is
     w <- minBitsLen(a)
 ```
 
-##### An example
+#### An example
 
 To make the algorithm even clearer, here is an example of how it works.
 

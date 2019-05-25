@@ -3,7 +3,7 @@ layout: post
 title: Benchmarking a simple integer compression algorithm
 ---
 
-In my [last post](https://vteromero.github.io/simple-integer-list-compression/), I described an integer compression algorithm (Simple, from now on) that can be easily implemented in just a few lines of code. I also wrote about its possible strengths and weaknesses, but just as an exercise of pure intuition. In this post, I am going to show you the results I have got by testing and benchmarking the algorithm.
+In my [last post](https://vteromero.github.io/2018/10/06/simple-integer-list-compression.html), I described an integer compression algorithm (Simple, from now on) that can be easily implemented in just a few lines of code. I also wrote about its possible strengths and weaknesses, but just as an exercise of pure intuition. In this post, I am going to show you the results I have got by testing and benchmarking the algorithm.
 
 I have written a quick [prototype](https://github.com/vteromero/playground/tree/master/simple-integer-list-compression) in Go to check and challenge my assumptions about the algorithm. It comprises of a library which implements it, some benchmarks to measure the compression and decompression **speed** and a command-line tool to test the **compression ratio**.
 
@@ -17,11 +17,11 @@ I have tried to feed the algorithms with the same exact data, but it has been im
 
 ### Results
 
-##### Environment
+#### Environment
 
 The following results have been got on a laptop Ubuntu Desktop 18.10 with a Core i7-6700HQ CPU @ 2.60GHz x 8. You might get different values on a different environment setup, but they should be similar in terms of comparing them to one another.
 
-##### Compression and decompression speed
+#### Compression and decompression speed
 
 Here is the outcome for the benchmarks:
 
@@ -44,7 +44,7 @@ In the compression side, Simple is clearly slower than BP32, FastPFor and DeltaB
 
 In terms of decompression speed, Simple is much worse than the other specialised integer compression methods. Nonetheless, compared to Zlib, it is 7x faster.
 
-##### Compression ratio
+#### Compression ratio
 
 As I mentioned earlier, I have created a small command-line tool, called `compare-compression-ratio`, as part of the prototype. Its purpose is to run the set of algorithms with different inputs of different sizes, and then to show the compression ratio for each case. It displays the results in the form of a table, so that it is quite easy to determine at a glance which methods get the best compression ratio.
 
