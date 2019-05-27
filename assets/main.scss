@@ -1,0 +1,32 @@
+---
+---
+
+@import "minima";
+
+.site-header {
+  background-color:  #7b241c;
+}
+
+.site-title {
+  color: white;
+
+  &:visited {
+    color: white;
+  }
+}
+
+.site-nav {
+  .page-link {
+    color: white;
+  }
+
+  @include media-query($on-palm) {
+    .page-link {
+      color: black;
+    }
+  }
+}
+
+.site-footer {
+  background-color: #f8f8f8;
+}
