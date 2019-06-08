@@ -39,14 +39,14 @@ The previous example is kind of basic, but at the same time it is a good startin
 
 #### The input
 
-Basically, as the title states, the input is a sorted list of integers. However, we will first focus on a specific version of it and then, we will generalise it. Initially, the input meets the following constraints:
+Basically, as the title states, the input is a sorted list of integers. However, we will first focus on a specific version of it and we will extend it later. Initially, the input meets the following constraints:
 
 * The order of the elements in the list is descending.
 * The list only contains non-negative integers.
 
 #### The algorithm
 
-The idea behind this algorithm is to be close to encoding each integer with the minimum number of bits, or $$minBitsLen$$. That's somehow the same as what we tried in the introductory example. However, in this case there is a **context** that we can take advantage of: we know that every element on the list is always greater than or equal to the next one. That also means that at any position $$i$$ in the list $$l$$, $$minBitsLen(l[i])$$ is big enough to represent $$l[i+1]$$. With that in mind, we can encode each integer by using the value of $$minBitsLen$$ for the previous element:
+The idea behind this algorithm is to be close to encoding each integer with the minimum number of bits, which is defined by this expression: $$minBitsLen(x) = \lceil\log_2(x)\rceil$$. That's somehow the same as what we tried in the introductory example. However, in this case there is a **context** that we can take advantage of: we know that every element on the list is always greater than or equal to the next one. That also means that at any position $$i$$ in the list $$l$$, $$minBitsLen(l[i])$$ is big enough to represent $$l[i+1]$$. With that in mind, we can encode each integer by using the value of $$minBitsLen$$ for the previous element:
 
 ```
 algorithm "compress" is
