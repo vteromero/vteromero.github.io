@@ -18,7 +18,7 @@ email: vteromero@gmail.com
 description: Learning in progress...
 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "vteromero.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://vteromero.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 twitter_username: vte_romero
 github_username:  vteromero
