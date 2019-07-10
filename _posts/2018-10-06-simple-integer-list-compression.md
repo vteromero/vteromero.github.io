@@ -46,7 +46,17 @@ Basically, as the title states, the input is a sorted list of integers. However,
 
 #### The algorithm
 
-The idea behind this algorithm is to be close to encoding each integer with the minimum number of bits, which is defined by this expression: $$minBitsLen(x) = \lceil\log_2(x)\rceil$$. That's somehow the same as what we tried in the introductory example. However, in this case there is a **context** that we can take advantage of: we know that every element on the list is always greater than or equal to the next one. That also means that at any position $$i$$ in the list $$l$$, $$minBitsLen(l[i])$$ is big enough to represent $$l[i+1]$$. With that in mind, we can encode each integer by using the value of $$minBitsLen$$ for the previous element:
+The idea behind this algorithm is to be close to encoding each integer with the minimum number of bits, which is defined by this expression:
+
+$$
+minBitsLen(x) =
+\begin{cases}
+  1                         & \quad \text{for } x = 0\\
+  \lceil\log_2(x + 1)\rceil & \quad \text{for } x > 0
+\end{cases}
+$$
+
+That's somehow the same as what we tried in the introductory example. However, in this case there is a **context** that we can take advantage of: we know that every element on the list is always greater than or equal to the next one. That also means that at any position $$i$$ in the list $$l$$, $$minBitsLen(l[i])$$ is big enough to represent $$l[i+1]$$. With that in mind, we can encode each integer by using the value of $$minBitsLen$$ for the previous element:
 
 ```
 algorithm "compress" is
