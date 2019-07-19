@@ -20,6 +20,9 @@ description: Learning in progress...
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://vteromero.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
+header_pages:
+  - about.md
+
 twitter_username: vte_romero
 github_username:  vteromero
 rss: rss
