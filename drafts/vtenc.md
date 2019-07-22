@@ -12,11 +12,13 @@ VTEnc is an acronym for **Vertically-Clustered Bits Tree Encoding**. This long n
 
 ### Vertically-Clustered Bits
 
-The first step of the algorithm is to group bits vertically. For that, we first need to represent the input list in binary and think of it as a table. Rows correspond to the values of the list, numbered 0 through $$N-1$$, being $$N$$ the size of the list. Columns are the bit positions, numbered 0 through $$W-1$$, where $$W$$ is the size in bits of each integer in the list. In this table, rows follow a top-to-bottom order and columns conform to a right-to-left arrangement.
+The first step of the algorithm is to group bits vertically. For that, we first need to represent the input list in binary and think of it as a table. Rows correspond to the values of the list, numbered 0 through $$N-1$$, $$N$$ being the size of the list. Columns are the bit positions, numbered 0 through $$W-1$$, where $$W$$ is the size in bits of each integer in the list. In this table, rows follow a top-to-bottom order and columns conform to a right-to-left arrangement.
 
 VTEnc creates clusters by bringing together consecutive bits that have the same value and belong to the same column. Each of these clusters is vertically constrained by the adjacent cluster on its left. That means that a) none of the clusters extends out of the vertical bounds marked by its neighbouring cluster on its left; and b) a cluster can only have one contiguous cluster on its left. So, for example, if there is a cluster in column 3 that extends from row 2 to row 5, then there must necessarily exist one cluster in column 4 that covers the range from row 2 to row 5. Of course, this restriction doesn't apply to clusters in column $$W-1$$ as that is the leftmost column.
 
-<div style="text-align:center"><img alt="VTEnc clusters" src="/img/vtenc-clusters.png" /></div>
+{:refdef: style="text-align: center;"}
+![VTEnc clusters](/img/vtenc-clusters.png)
+{: refdef}
 
 The figure above shows an example of how the clusters would be created for the sequence of 4-bit integers **[1, 2, 4, 11, 13]**. In green, you can see the vertical groups of bits with the same value. Notice that the two possible clusters of two bits each in column 0 (rows 1-2 and 3-4) are not allowed as they don't meet the restriction explained earlier.
 
@@ -26,7 +28,9 @@ The purpose of arranging clusters in this particular way is to ease the creation
 
 Here is the binary tree from the clusters in the previous example:
 
-<div style="text-align:center"><img alt="VTEnc clusters tree" src="/img/vtenc-clusters-tree.png" /></div>
+{:refdef: style="text-align: center;"}
+![VTEnc clusters tree](/img/vtenc-clusters-tree.png)
+{: refdef}
 
 Nonetheless, the tree we want to build here is not exactly as the one from the figure above. We don't care about the specific bits that make up a cluster. Instead, we just use the lengths of the clusters to be the nodes of the tree. For the root node, we use the length of the whole input list.
 
@@ -41,7 +45,9 @@ In order to accomplish (3) and (4), the tree must be extended by adding a 0-valu
 
 Continuing with the same example, this is the final tree:
 
-<div style="text-align:center"><img alt="VTEnc binary tree" src="/img/vtenc-binary-tree.png" /></div>
+{:refdef: style="text-align: center;"}
+![VTEnc binary tree](/img/vtenc-binary-tree.png)
+{: refdef}
 
 ### Encoding
 
