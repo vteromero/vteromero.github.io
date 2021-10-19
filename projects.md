@@ -14,7 +14,7 @@ C library to compress sorted sequences (lists and sets) of unsigned integers. It
 
 ### Totalistic Cellular Automaton Generator
 
-[ [GitHub](https://github.com/vteromero/totalistic-cellular-automata) ]
+[ [Try it](/projects/totalistic-cellular-automata/) ] [ [GitHub](https://github.com/vteromero/totalistic-cellular-automata) ]
 
 JavaScript tool to generate [Totalistic Cellular Automata](https://mathworld.wolfram.com/TotalisticCellularAutomaton.html).
 
