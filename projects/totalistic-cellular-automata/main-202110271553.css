@@ -1,4 +1,5 @@
 body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
   font-size: 16px;
   height: 100vh;
   margin: 0;
@@ -12,9 +13,11 @@ body {
 
 .sidebar {
   background-color: #484848;
-  width: 2rem;
+  box-shadow: 1px 1px 3px #aaa;
+  flex-shrink: 0;
   position: relative;
   transition: 1s ease;
+  width: 2rem;
 }
 
 .sidebar--large {
@@ -95,11 +98,16 @@ body {
   border-color: #ccc;
 }
 
+.sidebar__checkbox-row {
+  white-space: nowrap;
+}
+
 .sidebar__button {
   background-color: #13adbd;
   border: none;
   color: #000066;
   font-size: 1.1rem;
+  overflow: hidden;
   padding: 1rem 2rem;
   white-space: nowrap;
   width: 100%;
@@ -129,7 +137,9 @@ body {
 }
 
 .sidebar__permalink-container {
+  color: #e0e0e0;
   margin: 2rem;
+  white-space: nowrap;
 }
 
 .sidebar__permalink {
@@ -143,4 +153,19 @@ body {
   justify-content: center;
   overflow: scroll;
   transition: 1s ease;
+}
+
+.top-links {
+  background-color: #fff;
+  box-shadow: -1px 1px 3px #484848;
+  color: #000;
+  font-weight: bold;
+  padding: 0.5rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.top-links__link {
+  color: #000;
 }
