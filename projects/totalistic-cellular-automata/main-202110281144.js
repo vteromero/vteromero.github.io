@@ -117,8 +117,8 @@
     canvas.height = height;
   };
   var automatonPermalinkURL = (baseUrl, props) => {
-    let url = new URL(baseUrl);
-    let searchParams = new URLSearchParams();
+    const url = new URL(baseUrl);
+    const searchParams = new URLSearchParams();
     searchParams.set("colors", props.colors);
     searchParams.set("cellSize", props.cellSize);
     searchParams.set("rows", props.rows);
@@ -129,6 +129,13 @@
     url.search = searchParams.toString();
     url.hash = "";
     return url;
+  };
+  var chunkArray = (arr, chunkSize) => {
+    const len = Math.ceil(arr.length / chunkSize);
+    return Array.from({ length: len }, (_, i) => {
+      const j = i * chunkSize;
+      return arr.slice(j, j + chunkSize);
+    });
   };
 
   // index.js
@@ -182,15 +189,23 @@
       return automatonFuncs.randomRow(columns);
     }
   };
+  var PALETTE_COLORS_PER_ROW = 4;
   var addPaletteColorInputs = (palette) => {
-    const colorsInputs = palette.map((paletteColor) => {
+    const colorInputs = palette.map((paletteColor) => {
       const input = document.createElement("input");
       input.setAttribute("type", "color");
       input.setAttribute("class", "sidebar__color-input");
       input.setAttribute("value", paletteColor);
       return input;
     });
-    document.querySelector("#palette-container").replaceChildren(...colorsInputs);
+    const chunkedColorInputs = chunkArray(colorInputs, PALETTE_COLORS_PER_ROW);
+    const colorInputRows = chunkedColorInputs.map((chunk) => {
+      const row = document.createElement("div");
+      row.setAttribute("class", "sidebar__palette-row");
+      chunk.forEach((colorInput) => row.appendChild(colorInput));
+      return row;
+    });
+    document.querySelector("#palette-container").replaceChildren(...colorInputRows);
   };
   var disablePaletteColorInputs = (disabled) => {
     document.querySelectorAll(".sidebar__color-input").forEach((input) => input.disabled = disabled);
@@ -245,16 +260,6 @@
     generateAutomaton(props);
     return props;
   };
-  var logAutomatonProps = (props) => {
-    console.log("colors:", props.colors);
-    console.log("cellSize:", props.cellSize);
-    console.log("rows:", props.rows);
-    console.log("columns:", props.columns);
-    console.log("table:", props.funcs.tableArrayToStr(props.table));
-    console.log("palette:", props.funcs.paletteArrayToStr(props.palette));
-    console.log("firstRow:", props.funcs.rowArrayToStr(props.firstRow));
-    console.log("permalink URL:", automatonPermalinkURL(document.location.href, props));
-  };
   var updateForm = (props) => {
     document.querySelector("#colors").value = props.colors;
     document.querySelector("#cell-size").value = props.cellSize;
@@ -293,14 +298,12 @@
   var addGenerateAutomatonButtonClickHandler = () => {
     document.querySelector("#generate-automaton").addEventListener("click", () => {
       const automatonProps = generateAutomatonFromForm();
-      logAutomatonProps(automatonProps);
       updateForm(automatonProps);
       updatePermalink(automatonProps);
     });
   };
   window.addEventListener("DOMContentLoaded", () => {
     const automatonProps = generateAutomatonFromUrlParams();
-    logAutomatonProps(automatonProps);
     updateForm(automatonProps);
     updatePermalink(automatonProps);
     addSidebarToggleButtonClickHandler();
