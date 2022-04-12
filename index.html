@@ -3,12 +3,12 @@ layout: default
 ---
 
 <section class="posts">
-  <ul>
+  <ul class="post-list">
     {% for post in site.posts %}
-    <li>
-      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
-    </li>
+      <li class="post-list__item">
+        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+      </li>
     {% endfor %}
   </ul>
 </section>
