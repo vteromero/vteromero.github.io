@@ -2,13 +2,13 @@
   <nav class="nav">
     <ul class="nav-links">
       <li class="nav-links__item">
-        <a class="nav-link" href="/">Blog</a>
+        <a {% if page.url == "/" %} class="nav-link nav-link--active" {% else %} class="nav-link"{% endif %} href="/">Blog</a>
       </li>
       <li class="nav-links__item">
-        <a class="nav-link" href="/projects/">Projects</a>
+        <a {% if page.url == "/projects/" %} class="nav-link nav-link--active" {% else %} class="nav-link"{% endif %} href="/projects/">Projects</a>
       </li>
       <li class="nav-links__item">
-        <a class="nav-link" href="/about/">About</a>
+        <a {% if page.url == "/about/" %} class="nav-link nav-link--active" {% else %} class="nav-link"{% endif %} href="/about/">About</a>
       </li>
     </ul>
   </nav>

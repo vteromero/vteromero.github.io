@@ -60,6 +60,10 @@ a {
   color: #007299;
 }
 
+.nav-link--active {
+  font-weight: bold;
+}
+
 .posts {
   flex: 1;
   padding: 1rem;
