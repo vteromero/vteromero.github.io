@@ -12,10 +12,16 @@ html {
 
 body {
   background-color: #f3f3f3;
+  color: #151513;
   font-size: 16px;
   line-height: 32px;
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #870000;
 }
 
 .main {
@@ -51,7 +57,7 @@ body {
 };
 
 .nav-link {
-  text-decoration: none;
+  color: #007299;
 }
 
 .posts {
