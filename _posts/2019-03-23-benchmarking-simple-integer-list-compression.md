@@ -15,13 +15,13 @@ Uniformly distributed random values has been employed as input for the compressi
 
 I have tried to feed the algorithms with the same exact data, but it has been impossible since I have had to deal with different types of input. For instance, Zlib works with `[]byte`, whereas the other integer compression methods expect either `[]int32` or `[]uint32`. So, I ended up having to make some transformations in order to get a set of inputs as similar as possible.
 
-### Results
+## Results
 
-#### Environment
+### Environment
 
 The following results have been got on a laptop Ubuntu Desktop 18.10 with a Core i7-6700HQ CPU @ 2.60GHz x 8. You might get different values on a different environment setup, but they should be similar in terms of comparing them to one another.
 
-#### Compression and decompression speed
+### Compression and decompression speed
 
 Here is the outcome for the benchmarks:
 
@@ -44,7 +44,7 @@ In the compression side, Simple is clearly slower than BP32, FastPFor and DeltaB
 
 In terms of decompression speed, Simple is much worse than the other specialised integer compression methods. Nonetheless, compared to Zlib, it is 7x faster.
 
-#### Compression ratio
+### Compression ratio
 
 As I mentioned earlier, I have created a small command-line tool, called `compare-compression-ratio`, as part of the prototype. Its purpose is to run the set of algorithms with different inputs of different sizes, and then to show the compression ratio for each case. It displays the results in the form of a table, so that it is quite easy to determine at a glance which methods get the best compression ratio.
 
@@ -65,7 +65,7 @@ The first two lines are informative. One is telling the actual input size. The o
 
 As you can see, the compression ratios for the Simple algorithm are somewhat better than BP32 and FastPFor. Yet far from the results of DeltaBP32, DeltaFastPFor and even Zlib, for almost all input sizes, except for the smallest ones.
 
-### The case for small data
+## The case for small data
 
 When I was carrying out the tests, I soon realised that there is a use case in which Simple outperforms the rest of methods: small data. Small data refers here to a short sequence of just a few values, something around 100 integers or fewer. At that scale, Simple is better in terms of compression ratio.
 
@@ -114,7 +114,7 @@ By default, `compare-compression-ratio` adds a 32-bit header to indicate the len
 
 At some point between input sizes of 5 and 10, we start compressing. It is not bad at all.
 
-### Conclusion
+## Conclusion
 
 In general, Simple is slower than FastPFor, BP32 and their delta versions. This may be mainly because those algorithms are optimised to be fast and Simple is just a prototype. That doesn't mean that Simple will beat them eventually, but rather that there is still a lot of room for improvement.
 

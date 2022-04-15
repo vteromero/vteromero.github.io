@@ -9,7 +9,7 @@ One of the most important (yet obvious) things I learned is that any compressed 
 
 Sometimes you are so eager to try that fantastic and world-changing compression algorithm you just came up with that you don't pay much attention to the details. You might overlook the decompression process and make wrong assumptions about it. And you might end up having an amazing compression ratio and a pointless bunch of bits at the same time.
 
-### A naive attempt
+## A naive attempt
 
 To illustrate the issue, let's start with an example.
 
@@ -33,18 +33,18 @@ You are very excited and you rush to implement the algorithm, create some tests,
 
 So, how could anyone decompress that stream of bits? Keep in mind that I added some commas to improve readability. In the "real world", a compressed chunk is just a sequence of bits with no breaks between elements. Therefore, it is impossible to recover the original information as there is no rule that tells you when an element starts and when it ends.
 
-### Compressing a sorted list of integers
+## Compressing a sorted list of integers
 
 The previous example is kind of basic, but at the same time it is a good starting point to introduce the algorithm I'm going to describe. But, before I go into detail, let's define the input.
 
-#### The input
+### The input
 
 Basically, as the title states, the input is a sorted list of integers. However, we will first focus on a specific version of it and we will extend it later. Initially, the input meets the following constraints:
 
 * The order of the elements in the list is descending.
 * The list only contains non-negative integers.
 
-#### The algorithm
+### The algorithm
 
 The idea behind this algorithm is to be close to encoding each integer with the minimum number of bits, which is defined by this expression:
 
@@ -92,7 +92,7 @@ algorithm "decompress" is
     w <- minBitsLen(a)
 ```
 
-#### An example
+### An example
 
 To make the algorithm even clearer, here is an example of how it works.
 
@@ -115,11 +115,11 @@ As you can see, the output is smaller than the input, so we have achieved some c
 
 I am not going to go through the decompression algorithm as it is very similar to the compression one in the sense that both use the value of $$minBitsLen(prev)$$ to read from the input or to write onto the output.
 
-### How about ascending order?
+## How about ascending order?
 
 Even if the list is in ascending order, you will still need to encode the values in descending order. A solution would be to just add a flag that indicates the actual order of the list at the beginning of the compressed stream. One bit would be enough: 0 for ascending and 1 for descending.
 
-### Dealing with negative values
+## Dealing with negative values
 
 One way to deal with negative values is to use [ZigZag encoding](https://developers.google.com/protocol-buffers/docs/encoding#types) as a previous step before applying the proposed algorithm. ZigZag encoding maps signed integers to unsigned integers so that the values (0, -1, 1, -2, 2, -3, 3, ...) are transformed to (0, 1, 2, 3, 4, 5, 6, ...). In other words, the negative inputs are mapped to odd outputs, and the non-negative inputs to even outputs, so the least-significant bit becomes a *sign bit*. Here's how the mapping is expressed:
 
@@ -132,7 +132,7 @@ $$
 
 Of course, the decompressor needs to undo this mapping as a last step.
 
-### Pros & Cons
+## Pros & Cons
 
 Here is a list of some of the strengths of this algorithm:
 
@@ -147,7 +147,7 @@ And these are its weaknesses:
 * It solves a specific case (sorted list of integers), it is not a general integer encoder.
 * The decompressor must know the value of $$W$$, $$N$$ and the order of the list beforehand. Otherwise, that information must be included as a part of the output format.
 
-### Conclusion
+## Conclusion
 
 Although I have made some assumptions about the strengths of this algorithm, and they need to be proved, I am really confident of its **simplicity and speed**. Both compression and decompression algorithms are just a few lines long with no complicated calculations in it. Plus, considering that the complexity of $$minBitsLen$$ is constant, the algorithm runs in linear time with a complexity of $$O(n)$$, so it must be really quick.
 
