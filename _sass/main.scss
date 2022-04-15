@@ -1,4 +1,5 @@
 @import url('https://rsms.me/inter/inter.css');
+@import url('https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack-subset.css');
 
 html {
   font-family: 'Inter', sans-serif;
@@ -17,6 +18,10 @@ body {
   line-height: 32px;
   margin: 0;
   padding: 0;
+}
+
+pre, code {
+  font-family: Hack, monospace;
 }
 
 a {
