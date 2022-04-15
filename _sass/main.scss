@@ -24,6 +24,10 @@ a {
   color: #870000;
 }
 
+img {
+  max-width: 100%;
+}
+
 .main {
   display: flex;
   max-width: 60rem;
@@ -122,4 +126,10 @@ a {
 .post-list__item-date {
   white-space: nowrap;
   flex: 0 0 auto;
+}
+
+.post__img-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 1rem;
 }
