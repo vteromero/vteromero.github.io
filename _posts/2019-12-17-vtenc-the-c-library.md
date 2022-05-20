@@ -32,4 +32,4 @@ Now as Christmas time approaches, it's time to take a break, relax and think abo
 
 As usual, I'm open to hear any other ideas about the development of the library. And, of course, contributions are always welcomed.
 
-Merry Christmas! :christmas_tree: :santa:
+Merry Christmas! &#x1F384; &#x1F385;
