@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Happy Jekylling!"
+title: "Home"
 ---
 
-## You're ready to go!
+# Vicente Romero
 
-Start developing your Jekyll website.
+Welcome to my personal website!

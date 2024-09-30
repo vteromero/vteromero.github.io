@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
   </head>
   <body>
-    {{ content }}
+    <div class="main-container">
+      <nav class="nav">
+        <ul class="nav-links">
+          <li class="nav-links__item">
+            <a {% if page.url == "/" %} class="nav-link nav-link--active" {% else %} class="nav-link"{% endif %} href="/">Blog</a>
+          </li>
+          <li class="nav-links__item">
+            <a {% if page.url == "/projects/" %} class="nav-link nav-link--active" {% else %} class="nav-link"{% endif %} href="/projects/">Projects</a>
+          </li>
+          <li class="nav-links__item">
+            <a {% if page.url == "/about/" %} class="nav-link nav-link--active" {% else %} class="nav-link"{% endif %} href="/about/">About</a>
+          </li>
+        </ul>
+      </nav>
+      {{ content }}
+    </div>
   </body>
 </html>
