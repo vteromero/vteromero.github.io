@@ -40,3 +40,8 @@ a:hover {
   display: inline;
   margin: 8px 24px 8px 0px;
 }
+
+.post__date {
+  font-style: italic;
+  margin: 2rem 0;
+}
