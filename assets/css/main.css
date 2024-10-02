@@ -1,6 +1,7 @@
 body {
   font-size: 16px;
-  font-family: monospace;
+  font-family: "Fira Mono", monospace;
+  font-style: normal;
   background-color: snow;
   margin: 0;
 }
@@ -24,7 +25,7 @@ a:hover {
   font-size: 1.1rem;
   margin: 0;
   padding: 8px 0px;
-  border-bottom: double black;
+  border-bottom: 2px dotted black;
 }
 
 .nav-links {
