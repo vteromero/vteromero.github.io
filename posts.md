@@ -1,6 +1,8 @@
 ---
 layout: default
-title: "Posts"
+title: Posts
+permalink: /posts
+body_class: accent-blue
 ---
 
 # Posts

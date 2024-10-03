@@ -1,6 +1,7 @@
 ---
 layout: default
 title: "Home"
+body_class: accent-red
 ---
 
 # Vicente Romero

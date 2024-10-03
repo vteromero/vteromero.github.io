@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Encoding parameters in VTEnc library
+body_class: accent-blue
 ---
 
 [VTEnc v0.2.0](https://github.com/vteromero/VTEnc/blob/master/CHANGELOG.md#v020) is the biggest release of the library to date. It brings in several changes aiming to simplify the API, changes on the encoding data format, the new encoder and decoder structures, etc. But, above all those things, the most important feature is perhaps the inclusion of **encoding parameters**.

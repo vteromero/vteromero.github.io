@@ -1,6 +1,7 @@
 ---
 layout: post
 title: A simple way to compress a sorted list of integers
+body_class: accent-blue
 ---
 
 I've been playing around with compression algorithms for a while now. I tried many different things, from well-known techniques to new algorithms. I failed plenty of times when trying new things, but I always got something valuable out of it.

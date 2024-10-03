@@ -2,6 +2,7 @@
 layout: default
 title: About
 permalink: /about
+body_class: accent-purple
 ---
 
 ## About this site

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Benchmarking a simple integer compression algorithm
+body_class: accent-blue
 ---
 
 In my [last post](https://vteromero.github.io/2018/10/06/simple-integer-list-compression.html), I described an integer compression algorithm (Simple, from now on) that can be easily implemented in just a few lines of code. I also wrote about its possible strengths and weaknesses, but just as an exercise of pure intuition. In this post, I am going to show you the results I have got by testing and benchmarking the algorithm.
