@@ -18,4 +18,4 @@ Welcome to my personal website!
   {% endfor %}
 </ul>
 
-[&raquo; more posts]({{site.baseurl}}{% link posts.md%})
+[&raquo; more posts]({% link posts.md%})

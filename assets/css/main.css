@@ -1,5 +1,5 @@
 :root {
-  --bg-color: #fcfafa;
+  --bg-color: #fafafa;
   --font-color: black;
   --accent-color: #972424;
 }
@@ -11,6 +11,30 @@ body {
   font-style: normal;
   background-color: var(--bg-color);
   margin: 0;
+}
+
+pre, code {
+  font-family: Hack, monospace;
+  font-size: 15px;
+  line-height: 24px;
+  background-color: #fffdec;
+  border: 1px solid #e0e0e0;
+  border-radius: 3px;
+}
+
+pre {
+  padding: 0.5rem 0.75rem;
+  overflow-x: auto;
+}
+
+code {
+  padding: 1px 5px;
+}
+
+pre > code {
+  border: 0;
+  padding-right: 0;
+  padding-left: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
