@@ -50,6 +50,34 @@ a:hover {
   background-color: var(--accent-color);
 }
 
+img {
+  max-width: 100%;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+  border: 1px solid #dadada;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 0.5rem 1rem;
+}
+
+th {
+  background-color: #e8e8e8;
+  border: 1px solid #d0d0d0;
+}
+
+td {
+  border: 1px solid #dadada;
+}
+
+.table--white-body td {
+  background-color: white;
+}
+
 .accent-red {
   --accent-color: #972424;
 }

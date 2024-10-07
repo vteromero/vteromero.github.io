@@ -32,7 +32,7 @@ Here, a full subtree is a subtree of the Bit Cluster Tree in which every node ha
 Here's an example:
 
 {:refdef: style="text-align: center;"}
-![VTEnc full subtree example](/img/vtenc-full-subtree.png){:width="500px"}
+![VTEnc full subtree example](/assets/images/posts/vtenc-full-subtree.png){:width="500px"}
 {: refdef}
 
 The subtree enclosed in a blue square is indeed a full subtree as all its nodes meet the explained criteria. It has:
@@ -59,7 +59,7 @@ In the Bit Cluster Tree serialisation phase, when a tree node $$N$$ has a value 
 Consider the list of 3-bit integers [0, 1, 3, 5]. The following figure shows 2 different representations of it, used internally by VTEnc: binary table and Bit Cluster Tree.
 
 {:refdef: style="text-align: center;"}
-![VTEnc min_cluster_length example 1](/img/vtenc-min-cluster-length-1.png)
+![VTEnc min_cluster_length example 1](/assets/images/posts/vtenc-min-cluster-length-1.png)
 {: refdef}
 
 Suppose you want to encode that list with `min_cluster_length` = 3.
@@ -67,13 +67,13 @@ Suppose you want to encode that list with `min_cluster_length` = 3.
 The tree serialisation would begin from the root node and then it'd move to its left child, the node with value 3 at level 2. As the node's value is equal to `min_cluster_length`, the remaining nodes in that subtree (purple square in the figure below) wouldn't be visited. Instead, the corresponding lower bits in the binary table (purple square too) would be encoded. Then, the tree traversing process would continue from where it was, jumping to the node with value 1 at level 2. That node's value is less than `min_cluster_length`, so it'd be serialised and, then, its subtree would be skipped from being visited. Its corresponding bits from the binary table (green square) would be encoded instead.
 
 {:refdef: style="text-align: center;"}
-![VTEnc min_cluster_length example 2](/img/vtenc-min-cluster-length-2.png)
+![VTEnc min_cluster_length example 2](/assets/images/posts/vtenc-min-cluster-length-2.png)
 {: refdef}
 
 The encoded output would look like this:
 
 {:refdef: style="text-align: center;"}
-![VTEnc min_cluster_length example 3](/img/vtenc-min-cluster-length-3.png)
+![VTEnc min_cluster_length example 3](/assets/images/posts/vtenc-min-cluster-length-3.png)
 {: refdef}
 
 Of course, that's not the real output, but rather a simplified version of it. However, it serves to illustrate how VTEnc alternates tree serialisation with encoding lower bits from the binary table, depending on if a tree node's value has reached `min_cluster_length`.
