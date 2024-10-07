@@ -86,6 +86,10 @@ td {
   --accent-color: #246697;
 }
 
+.accent-green {
+  --accent-color: #5e9724;
+}
+
 .accent-purple {
   --accent-color: #832497;
 }
