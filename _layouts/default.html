@@ -13,23 +13,9 @@
   </head>
   <body class="{{ page.body_class }}">
     <div class="main-container">
-      <nav class="nav">
-        <ul class="nav-links">
-          <li class="nav-links__item">
-            <a href="/">Home</a>
-          </li>
-          <li class="nav-links__item">
-            <a href="/posts">Posts</a>
-          </li>
-          <li class="nav-links__item">
-            <a href="/projects">Projects</a>
-          </li>
-          <li class="nav-links__item">
-            <a href="/about">About</a>
-          </li>
-        </ul>
-      </nav>
+      {% include navigator.html %}
       {{ content }}
+      {% include footer.html %}
     </div>
   </body>
 </html>
