@@ -1,0 +1,172 @@
+:root {
+  --bg-color: #fafafa;
+  --font-color: black;
+  --accent-color: #972424;
+}
+
+body {
+  color: var(--font-color);
+  font-size: 16px;
+  font-family: "Fira Mono", monospace;
+  font-style: normal;
+  background-color: var(--bg-color);
+  margin: 0;
+}
+
+pre, code {
+  font-family: Hack, monospace;
+  font-size: 15px;
+  line-height: 24px;
+  background-color: hsl(from var(--accent-color) h s 96%);
+  border: 1px solid #e0e0e0;
+  border-radius: 3px;
+}
+
+pre {
+  padding: 0.5rem 0.75rem;
+  overflow-x: auto;
+}
+
+code {
+  padding: 1px 5px;
+}
+
+pre > code {
+  border: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--accent-color);
+}
+
+a {
+  color: var(--font-color);
+}
+
+a:hover {
+  color: var(--bg-color);
+  background-color: var(--accent-color);
+}
+
+img {
+  max-width: 100%;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+  border: 1px solid #dadada;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 0.5rem 1rem;
+}
+
+th {
+  background-color: #e8e8e8;
+  border: 1px solid #d0d0d0;
+}
+
+td {
+  border: 1px solid #dadada;
+}
+
+.table--white-body td {
+  background-color: white;
+}
+
+.accent-red {
+  --accent-color: #972424;
+}
+
+.accent-blue {
+  --accent-color: #246697;
+}
+
+.accent-green {
+  --accent-color: #5e9724;
+}
+
+.accent-purple {
+  --accent-color: #832497;
+}
+
+.main-container {
+  margin: 0px auto;
+  max-width: 700px;
+  padding: 0px 16px;
+}
+
+.nav {
+  box-sizing: border-box;
+  font-size: 1.1rem;
+  margin: 0;
+  padding: 8px 0px;
+  border-bottom: 1px dotted gray;
+}
+
+.nav-links {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links__item {
+  display: inline;
+  margin: 8px 24px 8px 0px;
+}
+
+.post-list {
+  box-sizing: border-box;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.post-list__item {
+  margin-bottom: 0.25rem;
+}
+
+.post__date {
+  font-style: italic;
+  margin: 2rem 0;
+}
+
+.footer {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4rem;
+  padding: 1.5rem 0;
+  border-top: 1px dotted gray;
+}
+
+.footer__social-links {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer__social-link {
+  display: flex;
+  margin: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+}
+
+.footer__social-link:hover {
+  flex: 1;
+  color: var(--accent-color);
+  background-color: var(--bg-color);
+  transform: translateY(-4px);
+}
+
+.footer__copyright {
+  flex: 1;
+}

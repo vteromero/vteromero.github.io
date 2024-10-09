@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Studying Mathematics at 40"
+body_class: accent-blue
 ---
 
 Earlier this year I decided that I was going back to university to study [Mathematics at the Open University](https://www.open.ac.uk/courses/maths/degrees/bsc-mathematics-q31), something that I didn't ponder much at the time, but was confident it was the right decision.

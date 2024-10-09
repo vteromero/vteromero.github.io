@@ -1,6 +1,7 @@
 ---
 layout: post
 title: VTEnc, the C library
+body_class: accent-blue
 ---
 
 Somewhat more than a month ago, I published [VTEnc](https://github.com/vteromero/VTEnc), a C library that provides an interface to encode and decode sorted sequences of integers using the algorithm with the same name. After the first busy days and having published its second version already, I think it's the right time to write about the journey to bring the library out.
@@ -32,4 +33,4 @@ Now as Christmas time approaches, it's time to take a break, relax and think abo
 
 As usual, I'm open to hear any other ideas about the development of the library. And, of course, contributions are always welcomed.
 
-Merry Christmas! :christmas_tree: :santa:
+Merry Christmas! 🎄 🎅

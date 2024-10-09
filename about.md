@@ -1,7 +1,12 @@
 ---
-layout: page
+layout: default
 title: About
-permalink: /about/
+permalink: /about
+body_class: accent-purple
 ---
 
-This is a blog about anything I may find interesting or useful for other people and especially for me (future me will be grateful of having writing down some of this stuff). The topics covered in this blog are usually among the following: programming, algorithms, compression, machine learning or AI.
+# About
+
+Hi! I'm Vicente Romero. This is my personal website, where I keep a summary of what I have built over the years, mostly in my spare time. I also write (not very often though) about anything that I may find interesting or useful/valuable for other people and specially for myself. The topics that I usually write about are: programming, compression, mathematics or game development.
+
+This website is built using [Jekyll](https://jekyllrb.com/). It uses [Fira Mono](https://fonts.google.com/specimen/Fira+Mono) font, [MathJax](https://www.mathjax.org/) library to display mathematical expressions, and [Phosphor](https://phosphoricons.com/) for social media icons.
