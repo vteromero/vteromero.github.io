@@ -1,7 +1,7 @@
 :root {
   --bg-color: #fafafa;
   --font-color: black;
-  --accent-color: #972424;
+  --accent-color: black;
 }
 
 body {
@@ -88,6 +88,10 @@ td {
 
 .accent-green {
   --accent-color: #5e9724;
+}
+
+.accent-orange {
+  --accent-color: #ce7432;
 }
 
 .accent-purple {
