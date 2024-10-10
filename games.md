@@ -7,7 +7,7 @@ body_class: accent-orange
 
 # Games
 
-I sometimes make games for fun. For now, all my games have been created using [PICO-8](https://www.lexaloffle.com/pico-8.php) (check it out, it's awesome!). Here are some of my best creations.
+I sometimes make [PICO-8](https://www.lexaloffle.com/pico-8.php) games for fun. Here are some of them.
 
 ## GOAT (Goat On A Tower)
 
